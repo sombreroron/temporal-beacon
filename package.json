@@ -1,0 +1,83 @@
+{
+    "name": "temporal-beacon",
+    "version": "1.0.0",
+    "description": "Temporal workflow and activity discovery tool with visualization UI",
+    "keywords": [
+        "temporal",
+        "workflow",
+        "activity",
+        "discovery",
+        "kubernetes",
+        "visualization"
+    ],
+    "author": "Shai Shwartz, David Ron",
+    "license": "MIT",
+    "homepage": "https://github.com/sombreroron/temporal-beacon#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sombreroron/temporal-beacon.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sombreroron/temporal-beacon/issues"
+    },
+    "type": "commonjs",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "bin": {
+        "beacon": "./dist/index.js"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "build": "npm run clean && npm run build:lib && npm run build:client",
+        "build:lib": "tsc -p tsconfig.lib.json",
+        "build:client": "vite build",
+        "dev": "ts-node src/index.ts",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "lint": "eslint src --ext .ts,.tsx",
+        "lint:fix": "eslint src --ext .ts,.tsx --fix",
+        "format": "prettier --write \"src/**/*.{ts,tsx,json}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,tsx,json}\"",
+        "clean": "rm -rf dist coverage",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build && npm test",
+        "preversion": "npm run lint && npm test",
+        "postversion": "git push && git push --tags"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@kubernetes/client-node": "^1.4.0",
+        "@mui/icons-material": "^6.5.0",
+        "@mui/material": "^6.5.0",
+        "axios": "^1.13.2",
+        "react": "^19.2.1",
+        "react-dom": "^19.2.1",
+        "tslib": "^2.3.0",
+        "undici": "^7.16.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "eslint": "^8.56.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.2.4",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.11"
+    }
+}
