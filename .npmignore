@@ -1,0 +1,45 @@
+# Source files
+src/
+*.ts
+!dist/**/*.d.ts
+
+# Config files
+tsconfig*.json
+jest.config.ts
+vite.config.mts
+.eslintrc.json
+
+# Development
+node_modules/
+coverage/
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Testing
+**/*.test.ts
+**/*.spec.ts
+__tests__/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+.circleci/
+.travis.yml
+
+# Documentation (keep README and LICENSE)
+# (none to ignore)
+
+# Other
+*.map
+.env
+.env.local
+index.html
+
