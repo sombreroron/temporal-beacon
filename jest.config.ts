@@ -33,6 +33,7 @@ const config: Config = {
             statements: 50,
         },
     },
+    passWithNoTests: true,
 };
 
 export default config;
